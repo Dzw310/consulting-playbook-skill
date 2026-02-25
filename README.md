@@ -4,17 +4,14 @@ Consulting playbook skills route ambiguous client situations into structured mod
 
 ## Skill Library
 - `consulting-playbook`: Dispatcher and only user-facing entry point; runs intake, confidence routing, and blueprint initialization.
-- `consulting-problem-structuring`: Internal B2 coaching for de-anchoring, guiding-question clarity, and issue/hypothesis trees.
-- `consulting-data-insights`: Internal B1 coaching for stakeholder interviews, data credibility checks, and synthesis.
-- `consulting-strategy-development`: Internal B3 coaching for project control and high-impact recommendation development.
+- `consulting-playbook/subskills/consulting-problem-structuring`: Internal B2 coaching for de-anchoring, guiding-question clarity, and issue/hypothesis trees.
+- `consulting-playbook/subskills/consulting-data-insights`: Internal B1 coaching for stakeholder interviews, data credibility checks, and synthesis.
+- `consulting-playbook/subskills/consulting-strategy-development`: Internal B3 coaching for project control and high-impact recommendation development.
 
 ## Installation
-Copy these folders into `~/.claude/skills/`:
+Copy this folder into `~/.claude/skills/`:
 - `consulting-playbook/`
-- `consulting-problem-structuring/`
-- `consulting-data-insights/`
-- `consulting-strategy-development/`
-Each folder is protocol-ready with a `SKILL.md` entry file.
+This includes the three internal sub-skills in `consulting-playbook/subskills/`.
 
 ## Public Installation (GitHub)
 Install from GitHub with the Skills CLI:
@@ -23,32 +20,12 @@ Install from GitHub with the Skills CLI:
 npx skills add Dzw310/consulting-playbook-skill@consulting-playbook
 ```
 
-All-in-one install (PowerShell):
-
-```powershell
-@(
-  "consulting-playbook",
-  "consulting-problem-structuring",
-  "consulting-data-insights",
-  "consulting-strategy-development"
-) | ForEach-Object { npx skills add "Dzw310/consulting-playbook-skill@$_" }
-```
-
-If your installer/source expects explicit adds for all folders:
-
-```bash
-npx skills add Dzw310/consulting-playbook-skill@consulting-playbook
-npx skills add Dzw310/consulting-playbook-skill@consulting-problem-structuring
-npx skills add Dzw310/consulting-playbook-skill@consulting-data-insights
-npx skills add Dzw310/consulting-playbook-skill@consulting-strategy-development
-```
-
 ## Invocation
 Use only `consulting-playbook` as the entry point. The dispatcher invokes sub-skills internally based on routed signals and confidence logic.
 
 ## Public Usage Rules
 - Entry point: `$consulting-playbook`
-- Internal only: `$consulting-problem-structuring`, `$consulting-data-insights`, `$consulting-strategy-development`
+- Internal only: `$consulting-problem-structuring`, `$consulting-data-insights`, `$consulting-strategy-development` (packaged under `consulting-playbook/subskills/`)
 - Sub-skills are dispatcher-invoked and not intended as direct user entry points.
 
 ## Quick Start
