@@ -1,0 +1,6 @@
+interface:
+  display_name: "Internal - Problem Structuring"
+  short_description: "Internal sub-skill for dispatcher-driven B2 coaching"
+  default_prompt: "Use $consulting-playbook; this internal sub-skill is dispatcher-invoked."
+policy:
+  allow_implicit_invocation: false

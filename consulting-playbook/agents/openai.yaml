@@ -1,0 +1,6 @@
+interface:
+  display_name: "Consulting Playbook"
+  short_description: "Help with Consulting Playbook tasks"
+  default_prompt: "Use $consulting-playbook to route my consulting challenge and create a Consulting Blueprint."
+policy:
+  allow_implicit_invocation: true
