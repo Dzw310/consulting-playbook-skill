@@ -1,42 +1,62 @@
-# Consulting Playbook Skills
+# Consulting Playbook
 
-Consulting playbook skills route ambiguous client situations into structured modules, coach rigorous thinking, and maintain a living Consulting Blueprint so teams make faster, defensible decisions under real project pressure daily.
+Practical coaching for messy consulting problems.
 
-## Skill Library
-- `consulting-playbook`: Dispatcher and only user-facing entry point; runs intake, confidence routing, and blueprint initialization.
-- `consulting-playbook/subskills/consulting-problem-structuring`: Internal B2 coaching for de-anchoring, guiding-question clarity, and issue/hypothesis trees.
-- `consulting-playbook/subskills/consulting-data-insights`: Internal B1 coaching for stakeholder interviews, data credibility checks, and synthesis.
-- `consulting-playbook/subskills/consulting-strategy-development`: Internal B3 coaching for project control and high-impact recommendation development.
+This skill helps you think clearly, choose the right next steps, and keep your work organized when a project feels unclear or high pressure.
 
-## Installation
-Copy this folder into `~/.claude/skills/`:
-- `consulting-playbook/`
-This includes the three internal sub-skills in `consulting-playbook/subskills/`.
+## What You Get
+- A guided conversation that asks a few focused questions first
+- A clear plan for what to do next
+- A single working file that is updated as you progress:
+  - `blueprint/Blueprint-YYYY-MM-DD.md`
 
-## Public Installation (GitHub)
-Install from GitHub with the Skills CLI:
+## Best For
+- Client conversations that are stuck on one idea
+- Problems that feel broad or hard to structure
+- Conflicting data or unclear conclusions
+- Recommendation work that needs stronger logic
+- Tight timelines where you need to move now
+
+## Install
+Copy `consulting-playbook/` into your skills folder:
+
+- Codex: `~/.codex/skills/consulting-playbook/`
+- Claude Code: `~/.claude/skills/consulting-playbook/`
+- Agents runtime: `~/.agents/skills/consulting-playbook/`
+
+Or install from GitHub:
 
 ```bash
 npx skills add Dzw310/consulting-playbook-skill@consulting-playbook
 ```
 
-## Invocation
-Use only `consulting-playbook` as the entry point. The dispatcher invokes sub-skills internally based on routed signals and confidence logic.
-
-## Public Usage Rules
-- Entry point: `$consulting-playbook`
-- Internal only: `$consulting-problem-structuring`, `$consulting-data-insights`, `$consulting-strategy-development` (packaged under `consulting-playbook/subskills/`)
-- Sub-skills are dispatcher-invoked and not intended as direct user entry points.
-
 ## Quick Start
-Example first prompt:
+Invoke:
 
 ```text
-Use $consulting-playbook. I am currently facing: a client anchored on pricing as the only fix.
+$consulting-playbook
 ```
 
-## Consulting Blueprint
-A Consulting Blueprint is the single working artifact created and updated during coaching.
-Find it in `blueprint/Blueprint-YYYY-MM-DD.md`.
+Example:
 
-Optional: add `blueprint/` to `.gitignore` if you do not want to track working Blueprint files.
+```text
+Use $consulting-playbook. I am currently facing: a client insists pricing is the only fix.
+```
+
+## How To Use It Well
+1. Describe your situation in one sentence.
+2. Share where you are in the work (early framing, data gathering, analysis, or recommendation).
+3. Say how urgent it is.
+4. Follow the next step in the generated blueprint.
+
+## Output File
+The skill creates and updates:
+
+```text
+blueprint/Blueprint-YYYY-MM-DD.md
+```
+
+If you do not want to track this working file in git, add `blueprint/` to `.gitignore`.
+
+## License
+MIT. See [LICENSE](LICENSE).
