@@ -43,9 +43,9 @@ Before invoking a sub-skill, silently verify:
 # Sub-Skill Invocation
 After routing, use the Skill tool and pass context: situation, stage, time pressure, matched module, confidence level, and routing reason.
 
-- B1 signals: invoke `consulting-data-insights`.
-- B2 signals: invoke `consulting-problem-structuring`.
-- B3 signals: invoke `consulting-strategy-development`.
+- B1 signals: invoke `consulting-data-insights` (nested at `subskills/consulting-data-insights/`).
+- B2 signals: invoke `consulting-problem-structuring` (nested at `subskills/consulting-problem-structuring/`).
+- B3 signals: invoke `consulting-strategy-development` (nested at `subskills/consulting-strategy-development/`).
 - Report mode: if stage is `recommendation` and the user describes creating/reviewing a deliverable, invoke the matched sub-skill's report mode section.
 
 # Consulting Blueprint Creation
